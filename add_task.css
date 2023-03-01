@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+    cursor: default;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 5rem 0 3rem 7rem;
+}
+
+.leftPart {
+    margin: 0 4rem 0 7rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+input, textarea, .categoryDiv, .assignedToDiv {
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    width: 28rem;
+    margin: 0.8rem 0 2rem 0;
+    cursor: auto;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: #fff;
+}
+
+.categoryDiv, .assignedToDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+#categoryDiv p {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+}
+
+#categoryDiv, #categoryDiv p, #categoryDiv img {
+    cursor: pointer;
+}
+
+.selectColor {
+    width: 14px;
+    height: 14px;
+    margin-left: 1rem;
+    border-radius: 50px;
+}
+
+.grey:hover {
+    color: #999;
+}
+
+.turquoise:hover {
+    color: #1fd7c1;
+}
+
+.orange:hover {
+    color: #ff8a00;
+}
+
+.blue:hover {
+    color: #0038ff;
+}
+
+.yellow:hover {
+    color: #ffc701;
+}
+
+.pink:hover {
+    color: #fc71ff;
+}
+
+.turquoise_point  {
+    background-color: #1fd7c1;
+}
+
+.orange_point {
+    background-color: #ff8a00;
+}
+
+.blue_point {
+    background-color: #0038ff;
+}
+
+.yellow_point {
+    background-color: #ffc701;
+}
+
+.pink_point {
+    background-color: #fc71ff;
+}
+
+input, .categoryDiv, .assignedToDiv {
+    min-height: 3rem;
+}
+
+.categoryDiv > img, .assignedToDiv > img {
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: #d1d1d1;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid #999999;
+}
+
+textarea {
+    resize: none;
+    padding-top: 1rem;
+    height: 8rem;
+}
+
+textarea::placeholder {
+    color: #d1d1d1;
+}
+
+.inputCategoryAssignedTo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.categoryDiv, .inputCategoryAssignedTo p, .inputCategoryAssignedTo img {
+    cursor: pointer;
+}
+
+.mainContent {
+    display: flex;
+}
+
+.rightPart {
+    margin-left: 4rem;
+}
+
+.prioDiv {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0 2rem 0;
+}
+
+.prioButton {
+    width: 8.7rem;
+    height: 3rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 1px solid #d1d1d1;
+}
+
+.prioButton > img {
+    padding-left: 0.6rem;
+    cursor: pointer;
+}
+
+.calendar {
+    background: url(img/add_task/calendarIcon.png) no-repeat right;
+    background-position: 25.5rem;
+    padding: 0 3rem 0 1rem;
+    background-color: #fff;
+}
+
+.subtaskDiv {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.subtaskDiv > input {
+    margin: 0;
+}
+
+.subtaskDiv > #inputIcons {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+}
+
+#inputIcons > img {
+    cursor: text;
+}
+
+.closeIcon, .checkmarkIcon {
+    cursor: pointer;
+}
+
+.closeIcon:hover, .checkmarkIcon:hover {
+    filter: invert(59%) sepia(97%) saturate(1585%) hue-rotate(165deg) brightness(93%) contrast(90%);
+}
+
+.subtaskLine {
+    height: 2rem;
+}
+
+.subtaskIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 3.2rem;
+}
+
+#addIcon {
+    display: flex;
+}
+
+.finishedSubtask {
+    display: flex;
+    align-items: center;
+}
+
+.finishedSubtask > input {
+    width: 1rem;
+    height: auto;
+    margin: 0;
+}
+
+.finishedSubtask > p {
+    font-size: 0.9rem;
+    margin: 0.5rem 2rem 0.5rem 1rem;
+    max-width: 22rem;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+}
+
+.finishedSubtask > img {
+    width: 10px;
+    cursor: pointer;
+}
+
+#colorChoice {
+    display: none;
+    margin-bottom: 2rem;
+}
+
+.newCategory {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50px;
+    margin: 0 1rem 0 1rem;
+}
+
+.newCategory:hover {
+    transform: scale(1.4);
+    transition-duration: 0.15s;
+    cursor: pointer;
+}
+
+.green {
+    background-color: #169b16;
+}
+
+.red {
+    background-color: #f52424;
+}
+
+.violet {
+    background-color: #d63aee;
+}
+
+.brightBlue {
+    background-color: #5ec389;
+}
+
+.darkYellow {
+    background-color: #f1f106;
+}
+
+#createCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0.8rem 0 1rem 0;
+}
+
+.categoryText {
+    margin: 0;
+}
+
+.categoryIcons {
+    position: absolute;
+    right: 1rem;
+}

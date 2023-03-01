@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+    cursor: default;
+}
+
+.title {
+    margin: 5rem 0 5rem 7rem;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+}
+
+h1 > .heading_first {
+    font-weight: 700;
+    font-size: 3rem;
+    padding-right: 4rem;
+}
+
+h1 > .heading_second {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #2A3647;
+    padding-left: 2rem;
+}
+
+.quantity {
+    font-weight: 600;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+a .boxInfo {
+    font-size: 1.1rem;
+    color: #2A3647;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.mainContent {
+    margin-left: 7rem;
+}
+
+.firstRow {
+    display: flex;
+    justify-content: space-between;
+    width: 33rem;
+}
+
+.boxes_1 {
+    background-color: #fff;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.4s;
+}
+
+.boxes_1:hover .boxInfo, .boxes_1:hover {
+    color: #fff;
+    transform: scale(1.05);
+    border-radius: 0 30px 30px 30px;
+    transition-duration: 0.4s;
+}
+
+.boxes_1:hover {
+    background-color: #2A3647;
+}
+
+.quantity_2 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.secondRow {
+    width: 33rem;
+    height: 8rem;
+    border-radius: 30px;
+    background-color: #fff;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.4s;
+}
+
+.secondRow:hover .boxInfo_2, .secondRow:hover .date, .secondRow:hover {
+    color: #fff;
+    transform: scale(1.05);
+    border-radius: 0 30px 30px 30px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.secondRow:hover {
+    background-color: #2A3647;
+}
+
+.leftPart {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 8rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.rightPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.urgentIcon {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.date {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2A3647;
+    transition-duration: 0.4s;
+}
+
+.boxInfo_2 {
+    font-size: 0.8rem;
+    color: #2A3647;
+    transition-duration: 0.4s;
+}
+
+.greyVerticalLine {
+    height: 6rem;
+    width: 2px;
+    cursor: pointer;
+}
+
+.thirdRow {
+    display: flex;
+    justify-content: space-between;
+    width: 33rem;
+    margin: 3rem 0 5rem 0;
+    height: 8rem;
+}
+
+.firstBox, .secondBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    width: 15rem;
+    height: 8rem;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.4s;
+}
+
+.firstBox:hover, .secondBox:hover, .firstBox:hover p, .secondBox:hover p {
+    color: #fff;
+    transform: scale(1.05);
+    border-radius: 0 30px 30px 30px;
+    transition-duration: 0.4s;
+}
+
+.firstBox:hover, .secondBox:hover {
+    background-color: #2A3647;
+}
+
+.firstBox img, .secondBox img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.toDo, .done {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.thirdRow_subBox {
+    width: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.boxes_1, .secondRow, .firstBox, .secondBox {
+    cursor: pointer;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}

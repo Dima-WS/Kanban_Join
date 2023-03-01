@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+    cursor: default;
+}
+
+body {
+    background-color: #F6F7F8;
+    position: relative;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 4rem 4rem 4rem;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.heading input {
+    width: 18rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 0 4rem 0 1rem;
+    border: 1px solid #a8a8a8;
+    outline: none;
+    background-color: #fff;
+    background-image: url(img/board/input_VerticalLine.png), url(img/board/searchIcon.png);
+    background-position: center right 3rem, center right 1rem;
+    background-repeat: no-repeat;
+    background-size: 1px 2rem, auto;
+    cursor: auto;
+}
+
+.heading input:focus {
+    border: 2px solid #000;
+}
+
+.heading input::placeholder {
+    font-size: 1.1rem;
+    color: #d1d1d1;
+}
+
+.heading button {
+    height: 3rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    background-color: #2A3647;
+    padding: 0 0.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.heading > div {
+    width: 29rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading button > img {
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+#mainContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 0 4rem;
+}
+
+.column {
+    flex: 25%;
+}
+
+#column1, #column2, #column3, #column4 {
+    cursor: grab;
+}
+
+.category:hover, .title:hover, .description:hover {
+    cursor: all-scroll;
+}
+
+.column .taskDiv {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #837c7c;
+}
+
+.marginRight {
+    margin-right: 2rem;
+}
+
+.category {
+    padding: 0.3rem 1.5rem;
+    display: inline-block;
+    border-radius: 8px;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.color1 {
+    background-color: #FF7A00;
+}
+
+.color2 {
+    background-color: #FC71FF;
+}
+
+.color3 {
+    background-color: #1FD7C1;
+}
+
+.color4 {
+    background-color: #0038FF;
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #2A3647;
+}
+
+.description {
+    color: #a8a8a8;
+}
+
+h2 {
+    color: #2A3647;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.heading button:hover {
+    background-color: #29ABE2;
+}
+
+#ToDo, #InProgress, #AwaitingFeedback, #Done {
+    min-height: 24rem;
+}
+
+.taskDiv {
+    position: relative;
+}
+
+.taskDiv > img {
+    width: 25px;
+    height: auto;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+/* Add Task Section */
+
+#greyBackground {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 998;
+    display: none;
+}
+
+#addTask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 30px;
+    height: 44.5rem;
+    overflow-y: scroll;
+}
+
+#addTask::-webkit-scrollbar {
+    width: 0.5em;
+    border-radius: 30px;
+} 
+    
+#addTask::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#addTask::-webkit-scrollbar-thumb {
+    background-color: #666;
+    outline: 1px solid #eee;
+    border-radius: 30px;
+}
+
+#addTask h2 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+
+#addTask h2 > img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#addTask h2 > img:hover {
+    filter: invert(59%) sepia(97%) saturate(1585%) hue-rotate(165deg) brightness(93%) contrast(90%);
+}
+
+#addTask .leftPart {
+    margin: 0 4rem 0 0;
+}
+
+#addTask p {
+    font-size: 1.1rem;
+}
+
+#addTask input, #addTask textarea, #addTask .categoryDiv, #addTask .assignedToDiv {
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    width: 28rem;
+    margin: 0.8rem 0 2rem 0;
+    cursor: auto;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: #fff;
+}
+
+#addTask .categoryDiv, #addTask .assignedToDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+#addTask #categoryDiv p {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+}
+
+#addTask #categoryDiv, #addTask #categoryDiv p, #addTask #categoryDiv img {
+    cursor: pointer;
+}
+
+#addTask .selectColor {
+    width: 14px;
+    height: 14px;
+    margin-left: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#addTask .grey:hover {
+    color: #999;
+}
+
+#addTask .turquoise:hover {
+    color: #1fd7c1;
+}
+
+#addTask .orange:hover {
+    color: #ff8a00;
+}
+
+#addTask .blue:hover {
+    color: #0038ff;
+}
+
+#addTask .yellow:hover {
+    color: #ffc701;
+}
+
+#addTask .pink:hover {
+    color: #fc71ff;
+}
+
+#addTask .turquoise_point  {
+    background-color: #1fd7c1;
+}
+
+#addTask .orange_point {
+    background-color: #ff8a00;
+}
+
+#addTask .blue_point {
+    background-color: #0038ff;
+}
+
+#addTask .yellow_point {
+    background-color: #ffc701;
+}
+
+#addTask .pink_point {
+    background-color: #fc71ff;
+}
+
+#addTask input, #addTask .categoryDiv, #addTask .assignedToDiv {
+    min-height: 3rem;
+}
+
+#addTask .categoryDiv > img, #addTask .assignedToDiv > img {
+    cursor: pointer;
+}
+
+#addTask input::placeholder {
+    color: #d1d1d1;
+}
+
+#addTask input:focus, #addTask textarea:focus {
+    border: 2px solid #999999;
+}
+
+#addTask textarea {
+    resize: none;
+    padding-top: 1rem;
+    height: 8rem;
+}
+
+#addTask textarea::placeholder {
+    color: #d1d1d1;
+}
+
+#addTask .inputCategoryAssignedTo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#addTask .categoryDiv, #addTask .inputCategoryAssignedTo p, #addTask .inputCategoryAssignedTo img {
+    cursor: pointer;
+}
+
+#addTask .mainContent {
+    display: flex;
+}
+
+#addTask .rightPart {
+    margin-left: 4rem;
+}
+
+#addTask .prioDiv {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0 2rem 0;
+}
+
+#addTask .prioButton {
+    width: 8.7rem;
+    height: 3rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 1px solid #d1d1d1;
+}
+
+#addTask .prioButton > img {
+    padding-left: 0.6rem;
+    cursor: pointer;
+}
+
+#addTask .calendar {
+    background: url(img/add_task/calendarIcon.png) no-repeat right;
+    background-position: 25.5rem;
+    padding: 0 3rem 0 1rem;
+    background-color: #fff;
+}
+
+#addTask .subtaskDiv {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#addTask .subtaskDiv > input {
+    margin: 0;
+}
+
+#addTask .subtaskDiv > #inputIcons {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+}
+
+#addTask #inputIcons > img {
+    cursor: text;
+}
+
+#addTask .closeIcon, #addTask .checkmarkIcon {
+    cursor: pointer;
+}
+
+#addTask .closeIcon:hover, #addTask .checkmarkIcon:hover {
+    filter: invert(59%) sepia(97%) saturate(1585%) hue-rotate(165deg) brightness(93%) contrast(90%);
+}
+
+#addTask .subtaskLine {
+    height: 2rem;
+}
+
+#addTask .subtaskIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 3.2rem;
+}
+
+#addTask #addIcon {
+    display: flex;
+}
+
+#addTask .finishedSubtask {
+    display: flex;
+    align-items: center;
+}
+
+#addTask .finishedSubtask > input {
+    width: 1rem;
+    height: auto;
+    margin: 0;
+}
+
+#addTask .finishedSubtask > p {
+    font-size: 0.9rem;
+    margin: 0.5rem 2rem 0.5rem 1rem;
+    max-width: 22rem;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+}
+
+#addTask .finishedSubtask > img {
+    width: 10px;
+    cursor: pointer;
+}
+
+#addTask #colorChoice {
+    display: none;
+    margin-bottom: 2rem;
+}
+
+#addTask .newCategory {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50px;
+    margin: 0 1rem 0 1rem;
+}
+
+#addTask .newCategory:hover {
+    transform: scale(1.4);
+    transition-duration: 0.15s;
+    cursor: pointer;
+}
+
+#addTask .green {
+    background-color: #169b16;
+}
+
+#addTask .red {
+    background-color: #f52424;
+}
+
+#addTask .violet {
+    background-color: #d63aee;
+}
+
+#addTask .brightBlue {
+    background-color: #5ec389;
+}
+
+#addTask .darkYellow {
+    background-color: #f1f106;
+}
+
+#addTask #createCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0.8rem 0 1rem 0;
+}
+
+#addTask .categoryText {
+    margin: 0;
+}
+
+#addTask .categoryIcons {
+    position: absolute;
+    right: 1rem;
+}

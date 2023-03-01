@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+    cursor: default;
+}
+
+body {
+    display: flex;
+}
+
+#current {
+    background-color: #091931;
+}
+
+#content {
+    margin-top: 11rem;
+}
+
+.contentContainer {
+    background-color: #F6F7F8;
+    margin-left: 15rem;
+}
+
+.navSide {
+    width: 15rem;
+    height: 100vh;
+    background-color: #2A3647;
+    position: fixed;
+}
+
+.navSide .joinIcon {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.navSection > a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 25%;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.navSection > a:hover {
+    background-color: #091931;
+}
+
+.navSection > a > img {
+    margin-right: 1.5rem;
+    width: 25px;
+}
+
+.navFooter {
+    display: flex;
+    justify-content: center;
+    margin-top: 12rem;
+}
+
+.navFooter > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.navFooter a {
+    color: #CDCDCD;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.navFooter img {
+    padding-right: 1rem;
+}
+
+.navFooter a:hover {
+    background-color: #091931;
+}
+
+#current {
+    background-color: #091931;
+}
+
+.navTop {
+    background-color: #fff;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: calc(100% - 15rem);
+    z-index: 997;
+}
+
+.navTop > h6 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-left: 8rem;
+}
+
+.navTop div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7rem;
+    margin-right: 2rem;
+}
+
+.navTop .questionMark {
+    height: 30px;
+}
+
+.navTop img {
+    cursor: pointer;
+}
+
+.contentContainer {
+    width: 100%;
+}
