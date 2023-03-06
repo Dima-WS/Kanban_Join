@@ -512,3 +512,32 @@ h2 {
     position: absolute;
     right: 1rem;
 }
+
+.initialDiv {
+    display: flex;
+    margin-left: 0.3rem;
+    cursor: all-scroll;
+}
+
+.initial {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: 2px solid #fff;
+    margin-left: -0.3rem;
+    cursor: all-scroll;
+}
+
+.taskFooter {
+    margin: 1rem 0.5rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: all-scroll;
+}
+
+.taskFooter img {
+    cursor: all-scroll;
+}

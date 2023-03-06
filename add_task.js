@@ -1,17 +1,6 @@
 "use strict"
 
-let colors = {
-    "color1": "#1fd7c1", 
-    "color2": "#ff8a00",
-    "color3": "#0038ff",
-    "color4": "#ffc701",
-    "color5": "#fc71ff",
-    "color6": "#169b16",
-    "color7": "#f52424",
-    "color8": "#d63aee",
-    "color9": "#5ec389",
-    "color10": "#f1f106"
-}
+let setPrio;
 
 function render() {
     document.getElementById("content").innerHTML =  /*html*/ `
@@ -25,7 +14,7 @@ function render() {
             <p>Category</p>
             <div id="category" class="categoryDiv" onclick="openCategory()">
                 <div id="categoryTitle" class="inputCategoryAssignedTo">
-                    <p>Select task category</p>
+                    <p id="selectCategory">Select task category</p>
                     <img id="rotateTriangle" src="img/add_task/openTriangle.png" alt="Open-Symbol">
                 </div>
                 <div id="categoryDiv"></div>
@@ -184,11 +173,11 @@ function openCategory() {
     document.getElementById("rotateTriangle").style.rotate = "180deg";
     document.getElementById("categoryDiv").innerHTML = /*html*/ `
     <p class="grey" onclick="colorChoice()">New category</p>
-    <p id="backoffice" class="turquoise" onclick="putInInput()">Backoffice<span class="selectColor turquoise_point"></span></p>
-    <p id="design" class="orange" onclick="putInInput()">Design<span class="selectColor orange_point"></span></p>
-    <p id="marketing" class="blue" onclick="putInInput()">Marketing<span class="selectColor blue_point"></span></p>
-    <p id="media" class="yellow" onclick="putInInput()">Media<span class="selectColor yellow_point"></span></p>
-    <p id="sales" class="pink" onclick="putInInput()">Sales<span class="selectColor pink_point"></span></p>
+    <p id="backoffice" class="turquoise" onclick="putInInput('backoffice')">Backoffice<span class="selectColor turquoise_point"></span></p>
+    <p id="design" class="orange" onclick="putInInput('design')">Design<span class="selectColor orange_point"></span></p>
+    <p id="marketing" class="blue" onclick="putInInput('marketing')">Marketing<span class="selectColor blue_point"></span></p>
+    <p id="media" class="yellow" onclick="putInInput('media')">Media<span class="selectColor yellow_point"></span></p>
+    <p id="sales" class="pink" onclick="putInInput('sales')">Sales<span class="selectColor pink_point"></span></p>
     `;
 }
 
@@ -273,10 +262,17 @@ function colorUnfocus(unhoveredColor) {
     }
 }
 
-function putInInput() {
-    let taskName = document.getElementById("backoffice");
-    // let taskChoice = document.getElementById("backoffice");
-
-    // colorChoice();
-    categories.push(taskName.innerHTML);
+function putInInput(id) {
+    document.getElementById("selectCategory").innerHTML = document.getElementById(id).innerHTML;
 }
+
+function close_addTask() {
+    document.getElementById("greyBackground").style.display = "none";
+    document.getElementById("addTask").innerHTML = "";
+}
+
+function randColor(){
+    let backgroundColors = ["silver", "gray", "red", "purple", "fuchsia", "green", "lime", "yellow", "blue", "aqua"]
+    let chosenColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+    return chosenColor
+};

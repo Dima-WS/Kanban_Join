@@ -43,17 +43,10 @@ let boardContent = [
     }
 ]
 
-let colors = {
-    "color1": "#1fd7c1", 
-    "color2": "#ff8a00",
-    "color3": "#0038ff",
-    "color4": "#ffc701",
-    "color5": "#fc71ff",
-    "color6": "#169b16",
-    "color7": "#f52424",
-    "color8": "#d63aee",
-    "color9": "#5ec389",
-    "color10": "#f1f106"
+let namesColor = {
+    "Wladimir Putin": "#ffa800",
+    "Recep Erdogan": "#0232cf",
+    "Olaf Scholz": "#800080",
 }
 
 let currentDraggedElement;
@@ -102,14 +95,29 @@ function createMainContent() {
             <img src="img/board/editTask.png" alt="Edit-Icon" onmouseover="rotatable = false; isDraggable = false" onmouseout="rotatable = true; isDraggable = true">
             <p class="title">${boardContent[i].title}</p>
             <p class="description">${boardContent[i].description}</p>
-            <div>
-                <p id="initials"></p>
-
+            <div class="taskFooter">
+                <div id="initials${i}" class="initialDiv"></div>
+                <img src="${boardContent[i].priority}" alt="Priority-Symbol">
             </div>
         </div>
         `;
     }
+
+    renderFirstLetters()
 }
+
+function renderFirstLetters() {
+    for (let i = 0; i < boardContent.length; i++) {
+        const names = boardContent[i].names;
+        for (let j = 0; j < names.length; j++) {
+            const currentName = names[j];
+            const filterInitials = names[j].split(' ').map(name => name.charAt(0)).join('');
+            document.getElementById(`initials${i}`).innerHTML += /*html*/ `
+            <p id="initial${j}" class="initial" style='background-color:${namesColor[currentName]}; width: 2.5rem; height: 2.5rem'>${filterInitials}</p>
+            `;
+        }
+    }
+}  
 
 function initials_priority() {
     document.getElementById("initials").innerHTML = `${boardContent[i].names.split(" ")}`;
@@ -507,3 +515,9 @@ function close_addTask() {
     document.getElementById("greyBackground").style.display = "none";
     document.getElementById("addTask").innerHTML = "";
 }
+
+function randColor(){
+    let backgroundColors = ["silver", "gray", "red", "purple", "fuchsia", "green", "lime", "yellow", "blue", "aqua"]
+    let chosenColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+    return chosenColor
+};
