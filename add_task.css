@@ -30,6 +30,7 @@ input, textarea, .categoryDiv, .assignedToDiv {
     font-size: 1.1rem;
     outline: none;
     background-color: #fff;
+    cursor: auto;
 }
 
 .categoryDiv, .assignedToDiv {
@@ -54,6 +55,8 @@ input, textarea, .categoryDiv, .assignedToDiv {
     height: 14px;
     margin-left: 1rem;
     border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .grey:hover {
@@ -141,8 +144,13 @@ textarea::placeholder {
     display: flex;
 }
 
+#content {
+    margin-bottom: 5rem;
+}
+
 .rightPart {
     margin-left: 4rem;
+    position: relative;
 }
 
 .prioDiv {
@@ -167,13 +175,6 @@ textarea::placeholder {
 .prioButton > img {
     padding-left: 0.6rem;
     cursor: pointer;
-}
-
-.calendar {
-    background: url(img/add_task/calendarIcon.png) no-repeat right;
-    background-position: 25.5rem;
-    padding: 0 3rem 0 1rem;
-    background-color: #fff;
 }
 
 .subtaskDiv {
@@ -299,4 +300,78 @@ textarea::placeholder {
 .categoryIcons {
     position: absolute;
     right: 1rem;
+}
+
+.assignedToDiv {
+    cursor: auto;
+}
+
+#assignedToDiv > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3rem;
+}
+
+#assignedToDiv input {
+    width: 1rem;
+    height: 1rem;
+    min-height: 0;
+    margin: 0;
+    cursor: auto;
+}
+
+.inputCategoryAssignedTo {
+    padding: 0.8rem 0 0.8rem 0;
+}
+
+#subtaskContent input {
+    min-height: 0;
+}
+
+.clearCreateButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 9rem 3rem 0;
+    position: absolute;
+    bottom: -10rem;
+    right: 0;
+}
+
+.clear, .create {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #2A3647;
+    cursor: pointer;
+    margin-bottom: 3rem;
+}
+
+.clear {
+    color: #2A3647;
+    padding: 0.8rem 1.2rem;
+}
+
+.clear:hover {
+    border: 1px solid #29ABE2;
+    color: #29ABE2;
+}
+
+.create {
+    color: #fff;
+    background-color: #2A3647;
+    padding: 0.8rem 0.8rem;
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.create:hover {
+    background-color: #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+.clear > img, .create > img {
+    padding-left: 0.7rem;
+    cursor: pointer;
 }

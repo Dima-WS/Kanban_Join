@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="summary.js"></script>
+    <script src="nav.js"></script>
 </head>
 <body onload="render()">
 
@@ -33,10 +34,12 @@
 
     <div class="contentContainer">
         <div class="navTop">
+            <img src="img/summary/joinIcon-responsive.png" alt="Join-Icon">
             <h6>Kanban Project Management Tool</h6>
             <div>
                 <a href="about_join.html"><img class="questionMark" src="img/nav/questionmark_symbol.png" alt="Question mark"></a>
-                <img src="img/nav/profilePic_symbol.png" alt="Profile picture">
+                <img src="img/nav/profilePic_symbol.png" alt="Profile picture" onclick="showLogOut()">
+                <p id="logOut" style="display: none;" onclick="backToLogin()">Log out</p>
             </div>
         </div>  
         <div id="content"></div>

@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+    cursor: default;
+}
+
+body {
+    background-color: #F6F7F8;
+}
+
+#content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.joinIcon {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.loginDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40rem;
+    height: 30rem;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 1px 1px 4px #efefef,
+                -1px 1px 4px #efefef,
+                1px -1px 4px #efefef,
+                -1px -1px 4px #efefef;
+    padding: 2rem 0 2rem 0;
+    position: relative;
+}
+
+.loginDiv > h2 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.horizontalLine {
+    width: 9rem;
+    height: 3px;
+    margin-bottom: 2rem;
+}
+
+input {
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    width: 25rem;
+    cursor: auto;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: #fff;
+    height: 3rem;
+}
+
+input:focus {
+    outline: auto;
+}
+
+.email_input {
+    background-image: url(img/login/emailIcon.png);
+    background-position: center right 1rem;
+    background-repeat: no-repeat;
+    margin-bottom: 3rem;
+}
+
+.password_input {
+    background-image: url(img/login/passwordIcon.png);
+    background-position: center right 1rem;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+}
+
+input::placeholder {
+    color: #d1d1d1;
+}
+
+.forgotPW {
+    color: #29ABE2;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.buttonsDiv {
+    display: flex;
+    width: 24rem;
+    justify-content: space-between;
+}
+
+.login, .guest_login, .signUp {
+    width: 11rem;
+    height: 3.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.login, .signUp {
+    background-color: #2A3647;
+    color: #fff;
+    border: none;
+}
+
+.signUp {
+    margin-top: 1rem;
+}
+
+.guest_login {
+    background-color: #fff;
+    color: #2A3647;
+    border: 1px solid #2A3647;
+}
+
+.signUp_div {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16rem;
+}
+
+.signUp_btn {
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #2A3647;
+    color: #fff;
+    border: none;
+}
+
+.backArrow {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.backArrow:hover {
+    filter: invert(59%) sepia(97%) saturate(1585%) hue-rotate(165deg) brightness(93%) contrast(90%);
+    cursor: pointer;
+}
+
+.name_input {
+    background-image: url(img/login/nameIcon.png);
+    background-position: center right 1rem;
+    background-repeat: no-repeat;
+}
+
+.buttonsDiv a {
+    text-decoration: none;
+    color: #2A3647;
+    cursor: pointer;
+}
+
+.inputsDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 14rem;
+}
+
+@media (max-width: 970px) {
+    .joinIcon {
+        height: 5rem;
+        top: 2.5rem;
+        left: 2.5rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .loginDiv {
+        margin: 8rem 2.5rem 0;
+    }
+
+    .signUp_div {
+        flex-direction: column;
+        justify-content: flex-end;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 52rem;
+        padding-bottom: 4rem;
+    }
+
+    .signUp_div p {
+        margin-bottom: 0.6rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .loginDiv {
+        width: 22rem;
+    }
+
+    .email_input, .password_input, .name_input {
+        width: auto;
+    }
+
+    .loginDiv h2 {
+        font-size: 2.8rem;
+        font-weight: 600;
+    }
+
+    .loginDiv img {
+        top: 1.2rem;
+        left: 1.2rem;
+    }
+
+    .horizontalLine {
+        width: 7rem;
+        height: 2px;
+    }
+
+    .buttonsDiv {
+        width: 16rem;
+    }
+
+    .login, .guest_login {
+        width: 7rem;
+        padding: 0 1rem;
+    }
+
+    .login {
+        font-size: 1.1rem;
+    }
+
+    .guest_login {
+        line-height: 80%;
+    }
+
+    .guest_login > a {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .loginDiv {
+        padding: 2rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        margin: 12rem 2.5rem 0;
+    }
+}

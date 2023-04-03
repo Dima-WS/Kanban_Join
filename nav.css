@@ -121,6 +121,7 @@ body {
     align-items: center;
     width: 7rem;
     margin-right: 2rem;
+    position: relative;
 }
 
 .navTop .questionMark {
@@ -133,4 +134,16 @@ body {
 
 .contentContainer {
     width: 100%;
+}
+
+#logOut {
+    position: absolute;
+    bottom: -3.9rem;
+    left: 1rem;
+    background-color: #2A3647;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px 0 12px 12px;
+    cursor: pointer;
+    font-size: 0.8rem;
 }

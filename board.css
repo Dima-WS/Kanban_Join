@@ -60,7 +60,7 @@ h1 {
 }
 
 .heading > div {
-    width: 29rem;
+    width: auto;
     display: flex;
     justify-content: space-between;
 }
@@ -196,6 +196,7 @@ h2 {
     
 #addTask::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    display: none;
 }
 
 #addTask::-webkit-scrollbar-thumb {
@@ -355,6 +356,7 @@ h2 {
 
 #addTask .rightPart {
     margin-left: 4rem;
+    position: relative;
 }
 
 #addTask .prioDiv {
@@ -381,15 +383,8 @@ h2 {
     cursor: pointer;
 }
 
-#addTask .calendar {
-    background: url(img/add_task/calendarIcon.png) no-repeat right;
-    background-position: 25.5rem;
-    padding: 0 3rem 0 1rem;
-    background-color: #fff;
-}
-
 #addTask .subtaskDiv {
-    margin-top: 0.8rem;
+    margin: 0.8rem 0 0.5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -436,6 +431,12 @@ h2 {
 #addTask .finishedSubtask {
     display: flex;
     align-items: center;
+}
+
+#addTask .finishedSubtask img {
+    width: 0.8rem;
+    height: 0.8rem;
+    cursor: pointer;
 }
 
 #addTask .finishedSubtask > input {
@@ -513,6 +514,33 @@ h2 {
     right: 1rem;
 }
 
+#addTask .assignedToDiv {
+    cursor: pointer;
+}
+
+#addTask #assignedToDiv > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3rem;
+}
+
+#addTask #assignedToDiv input {
+    width: 1rem;
+    height: 1rem;
+    min-height: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+#addTask .inputCategoryAssignedTo {
+    padding: 0.8rem 0 0.8rem 0;
+}
+
+#addTask #subtaskContent input {
+    min-height: 0;
+}
+
 .initialDiv {
     display: flex;
     margin-left: 0.3rem;
@@ -540,4 +568,333 @@ h2 {
 
 .taskFooter img {
     cursor: all-scroll;
+}
+
+#selectCategory {
+    display: flex;
+    align-items: center;
+}
+
+#taskInfo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 30px;
+    height: fit-content;
+    width: 35rem;
+    position: relative;
+    overflow-y: scroll;
+    max-height: 43.5rem;
+}
+
+.renderCategory {
+    font-size: 1.5rem;
+    padding: 0.3rem 2.2rem;
+    margin: 0;
+}
+
+.taskTitle {
+    font-size: 3.2rem;
+    margin: 1.5rem 0;
+}
+
+.taskDescription, .taskDate, .taskPrio, .taskAssignedTo {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.taskAssignedTo {
+    margin-top: 1.5rem;
+}
+
+.taskDate, .taskPrio, .taskAssignedTo, .subtask {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.subtask {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.taskPrio, .taskDate {
+    display: inline-block;
+}
+
+.closeTask {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.closeTask:hover {
+    filter: invert(59%) sepia(97%) saturate(1585%) hue-rotate(165deg) brightness(93%) contrast(90%);
+}
+
+.clearCreateButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 3rem 3rem 0;
+    position: absolute;
+    bottom: -3rem;
+    right: 0;
+}
+
+.clear, .create {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #2A3647;
+    cursor: pointer;
+    margin-bottom: 3rem;
+}
+
+.clear {
+    color: #2A3647;
+    padding: 0.8rem 1.2rem;
+}
+
+.clear:hover {
+    border: 1px solid #29ABE2;
+    color: #29ABE2;
+}
+
+.create {
+    color: #fff;
+    background-color: #2A3647;
+    padding: 0.8rem 0.8rem;
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.create:hover {
+    background-color: #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+.clear > img, .create > img {
+    padding-left: 0.7rem;
+    cursor: pointer;
+}
+
+#taskInfo .dateInfo {
+    font-weight: 400;
+    margin-left: 3rem;
+}
+
+#taskInfo .prioInfo {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 0.2rem 1.1rem;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 3rem;
+    border: none;
+}
+
+.urgentColor {
+    background-color: #ff3d00;
+}
+
+.mediumColor {
+    background-color: #ffa800;
+}
+
+.lowColor {
+    background-color: #7ae229;
+}
+
+.invertPrioIcon {
+    filter: brightness(0) invert(1);
+}
+
+.btnImg {
+    display: inline-block;
+}
+
+.invertPrioIcon {
+    margin-left: 0.8rem;
+}
+
+.names {
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+}
+
+#assignees > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.editBtn, .confirmBtn {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    height: 2.5rem;
+}
+
+.editBtn:active {
+    transform: scale(0.95);
+}
+
+.infoSection {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#titleInput, #dateInput {
+    min-height: 3rem;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    margin: 0.6rem 0 1.2rem 0;
+    cursor: auto;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: #fff;
+    width: 100%;
+}
+
+#descriptionArea {
+    resize: none;
+    height: 8rem;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid #d1d1d1;
+    margin: 0.6rem 0 1.2rem 0;
+    font-size: 1.1rem;
+    cursor: auto;
+    outline: none;
+}
+
+.prioDiv {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.6rem 0 1.2rem 0;
+}
+
+.prioButton {
+    width: 8.7rem;
+    height: 3rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 1px solid #d1d1d1;
+}
+
+.prioButton > img {
+    padding-left: 0.6rem;
+    cursor: pointer;
+}
+
+.assignedToDiv {
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0.8rem 0 2rem 0;
+    cursor: pointer;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 3rem;
+}
+
+.assignedToDiv img {
+    cursor: pointer;
+}
+
+#assignedToDiv > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3rem;
+}
+
+#assignedToDiv input {
+    width: 1rem;
+    height: 1rem;
+    min-height: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.inputCategoryAssignedTo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.8rem 0 0.8rem 0;
+}
+
+#taskInfo::-webkit-scrollbar {
+    width: 0.5em;
+    border-radius: 30px;
+}
+
+#taskInfo::-webkit-scrollbar-thumb {
+    background-color: #666;
+    outline: 1px solid #eee;
+    border-radius: 30px;
+}
+
+#taskInfo::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    display: none;
+}
+
+#taskInfo .showScroll::-webkit-scrollbar {
+    overflow: scroll;
+    display: flex;
+}
+
+.finishedSubtask { 
+    display: flex;
+    align-items: center;
+}
+
+.finishedSubtask input {
+    margin-right: 0.5rem;
+}
+
+.finishedSubtask p {
+    margin-right: 1rem;
+}
+
+.subtaskDiv {
+    min-height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;    
+}
+
+.subtaskDiv img, .subtaskDiv input {
+    cursor: pointer;
+}
+
+.garbageIcon {
+    margin-right: 2rem;
+    height: 45px;
+}
+
+.heading > div > input {
+    margin-right: 2rem;
 }
