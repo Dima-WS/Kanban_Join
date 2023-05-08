@@ -1,54 +1,54 @@
 "use strict"
 
-// let boardContent = [
-//     {
-//         "color": "color1",
-//         "heading": "ToDo",
-//         "category": "Design",
-//         "title": "Website redesign",
-//         "description": "Modify the contents of the main website...",
-//         "subtasks": [],
-//         "prioWord": "Urgent",
-//         "names": ["Wladimir Putin", "Recep Erdogan"],
-//         "date": "27.03.2023"
-//     },
+let boardContent = [
+    {
+        "color": "color1",
+        "heading": "ToDo",
+        "category": "Design",
+        "title": "Website redesign",
+        "description": "Modify the contents of the main website...",
+        "subtasks": [],
+        "prioWord": "Urgent",
+        "names": ["Wladimir Putin", "Recep Erdogan"],
+        "date": "27.03.2023"
+    },
 
-//     {
-//         "color": "color2",
-//         "heading": "InProgress",
-//         "category": "Sales",
-//         "title": "Call potential clients",
-//         "description": "Make the product presentation to prospective buyers",
-//         "subtasks": [],
-//         "prioWord": "Low",
-//         "names": ["Olaf Scholz"],
-//         "date": "29.03.2023"
-//     },
+    {
+        "color": "color2",
+        "heading": "InProgress",
+        "category": "Sales",
+        "title": "Call potential clients",
+        "description": "Make the product presentation to prospective buyers",
+        "subtasks": [],
+        "prioWord": "Low",
+        "names": ["Olaf Scholz"],
+        "date": "29.03.2023"
+    },
 
-//     {
-//         "color": "color3",
-//         "heading": "AwaitingFeedback",
-//         "category": "Backoffice",
-//         "title": "Accounting invoices",
-//         "description": "Write open invoices for customer",
-//         "subtasks": [{"Send invoices to customer": false}, {"Offer customer a installment plan": true}],
-//         "prioWord": "Medium",
-//         "names": ["Wladimir Putin", "Recep Erdogan", "Olaf Scholz"],
-//         "date": "24.03.2023"
-//     },
+    {
+        "color": "color3",
+        "heading": "AwaitingFeedback",
+        "category": "Backoffice",
+        "title": "Accounting invoices",
+        "description": "Write open invoices for customer",
+        "subtasks": [{"Send invoices to customer": false}, {"Offer customer a installment plan": true}],
+        "prioWord": "Medium",
+        "names": ["Wladimir Putin", "Recep Erdogan", "Olaf Scholz"],
+        "date": "24.03.2023"
+    },
 
-//     {
-//         "color": "color4",
-//         "heading": "Done",
-//         "category": "Marketing",
-//         "title": "Social media strategy",
-//         "description": "Develop an ad campaign for brand positioning",
-//         "subtasks": [],
-//         "prioWord": "Urgent",
-//         "names": ["Wladimir Putin", "Olaf Scholz"],
-//         "date": "26.03.2023"
-//     }
-// ]
+    {
+        "color": "color4",
+        "heading": "Done",
+        "category": "Marketing",
+        "title": "Social media strategy",
+        "description": "Develop an ad campaign for brand positioning",
+        "subtasks": [],
+        "prioWord": "Urgent",
+        "names": ["Wladimir Putin", "Olaf Scholz"],
+        "date": "26.03.2023"
+    }
+]
 
 let namesColor = {
     "Wladimir Putin": "#ffa800",
@@ -56,7 +56,7 @@ let namesColor = {
     "Olaf Scholz": "#800080",
 }
 
-let boardContent;
+// let boardContent;
 let subtaskArray = [];
 let chooseColor;
 let selectedColor;
@@ -72,7 +72,6 @@ function render() {
     <div class="heading">
         <h1>Board</h1>
         <div>
-            <img class="garbageIcon" src="img/board/garbageIcon.png" alt="Garbage-Icon" ondragover="deleteTask(index)">
             <input id="searchInput" type="text" placeholder="Find task" oninput="searchTasks()">
             <button id="btn" onmouseover="btnOver()" onmouseout="btnOut()" onmousedown="btnDown()" onmouseup="btnUp()" onclick="render_addTask()">Add task<img src="img/board/buttonPlus.png" alt="Plus-Symbol"></button>
         </div>
@@ -81,7 +80,7 @@ function render() {
     <div id="mainContent">
         <div class="column marginRight">
             <h2>To Do</h2>
-            <div id="ToDo" ondrop="moveTo('ToDo')" ondrop="allowDrop(event)"></div>
+            <div id="ToDo" ondrop="moveTo('ToDo')" ondragover="allowDrop(event)"></div>
         </div>
         <div class="column marginRight">
             <h2>In Progress</h2>
@@ -102,11 +101,21 @@ function render() {
     saveBoardContent();
 }
 
+function removeTask(index) {
+    boardContent.splice(index, 1);
+    createMainContent();
+    saveBoardContent();
+}
+
 function createMainContent() {
+    for (let i = 0; i < boardContent.length; i++) {
+        document.getElementById(boardContent[i].heading).innerHTML = '';
+    }
     for (let i = 0; i < boardContent.length; i++) {
         document.getElementById(boardContent[i].heading).innerHTML += /*html*/ `
         <div id="task${i}" class="taskDiv" draggable="true" ondragstart="startDragging(${i})" onmouseover="hoverOn('task${i}')" onmouseout="hoverOut('task${i}')" onmousedown="rotateColumn('task${i}')" onmouseup="rotateColumnBack('task${i}')">
             <p class="category ${boardContent[i].color}">${boardContent[i].category}</p>
+            <img class="garbageIcon" src="img/board/garbageIcon.png" alt="Garbage-Icon" onclick="removeTask(${i})" onmouseover="rotatable = false; isDraggable = false" onmouseout="rotatable = true; isDraggable = true">
             <img src="img/board/editTask.png" alt="Edit-Icon" onmouseover="rotatable = false; isDraggable = false" onmouseout="rotatable = true; isDraggable = true" onclick="render_taskInfo(${i})">
             <p class="title">${boardContent[i].title}</p>
             <p class="description">${boardContent[i].description}</p>
@@ -545,11 +554,11 @@ function openCategory() {
         document.getElementById("rotateTriangle").style.transform = "rotate(180deg)";
         document.getElementById("categoryDiv").innerHTML = /*html*/ `
         <p class="grey" onclick="colorChoice()">New category</p>
-        <p id="backoffice" class="orange" onclick="putInInput('backoffice', 'color1')">Backoffice<span class="selectColor turquoise_point"></span></p>
-        <p id="design" class="turquoise" onclick="putInInput('design', 'color2')">Design<span class="selectColor orange_point"></span></p>
-        <p id="marketing" class="blue" onclick="putInInput('marketing', 'color3')">Marketing<span class="selectColor blue_point"></span></p>
-        <p id="media" class="yellow" onclick="putInInput('media', 'color4')">Media<span class="selectColor yellow_point"></span></p>
-        <p id="sales" class="pink" onclick="putInInput('sales', 'color5')">Sales<span class="selectColor pink_point"></span></p>
+        <p id="backoffice" class="orange" onclick="putInInput('backoffice', 'color3')">Backoffice<span class="selectColor turquoise_point"></span></p>
+        <p id="design" class="turquoise" onclick="putInInput('design', 'color1')">Design<span class="selectColor orange_point"></span></p>
+        <p id="marketing" class="blue" onclick="putInInput('marketing', 'color4')">Marketing<span class="selectColor blue_point"></span></p>
+        <p id="media" class="yellow" onclick="putInInput('media', 'color5')">Media<span class="selectColor yellow_point"></span></p>
+        <p id="sales" class="pink" onclick="putInInput('sales', 'color2')">Sales<span class="selectColor pink_point"></span></p>
         `;
         } else if (!document.getElementById("categoryDiv").innerHTML == "") {
             document.getElementById("categoryDiv").innerHTML = "";
@@ -571,11 +580,11 @@ function colorChoice() {
     </div>
     `;
     document.getElementById("colorChoice").innerHTML = /*html*/ `
-    <span id="color1" onmouseover="colorFocus('color1')" onmouseout="colorUnfocus('color1')" class="green newCategory" onclick="chosenColor('color1')"></span>
-    <span id="color2" onmouseover="colorFocus('color2')" onmouseout="colorUnfocus('color2')" class="red newCategory" onclick="chosenColor('color2')"></span>
-    <span id="color3" onmouseover="colorFocus('color3')" onmouseout="colorUnfocus('color3')" class="violet newCategory" onclick="chosenColor('color3')"></span>
-    <span id="color4" onmouseover="colorFocus('color4')" onmouseout="colorUnfocus('color4')" class="brightBlue newCategory" onclick="chosenColor('color4')"></span>
-    <span id="color5" onmouseover="colorFocus('color5')" onmouseout="colorUnfocus('color5')" class="darkYellow newCategory" onclick="chosenColor('color5')"></span>
+    <span id="color1" onmouseover="colorFocus('color3')" onmouseout="colorUnfocus('color1')" class="green newCategory" onclick="chosenColor('color1')"></span>
+    <span id="color2" onmouseover="colorFocus('color1')" onmouseout="colorUnfocus('color2')" class="red newCategory" onclick="chosenColor('color2')"></span>
+    <span id="color3" onmouseover="colorFocus('color4')" onmouseout="colorUnfocus('color3')" class="violet newCategory" onclick="chosenColor('color3')"></span>
+    <span id="color4" onmouseover="colorFocus('color5')" onmouseout="colorUnfocus('color4')" class="brightBlue newCategory" onclick="chosenColor('color4')"></span>
+    <span id="color5" onmouseover="colorFocus('color2')" onmouseout="colorUnfocus('color5')" class="darkYellow newCategory" onclick="chosenColor('color5')"></span>
     `;
 
     document.getElementById("createCategory").style.display = "flex";
@@ -933,11 +942,3 @@ function deleteSubtaskInTaskInfo(boardContentIndex, arrayIndex) {
     boardContent[boardContentIndex].subtasks.splice(arrayIndex,1);
 
 }
-
-function deleteTask(index) {
-    const taskElement = document.getElementById(`task${index}`);
-    taskElement.remove();
-    boardContent.splice(index, 1);
-    saveBoardContent();
-  }
-  

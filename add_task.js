@@ -191,6 +191,7 @@ function createTask() {
     chooseColor = false;
     selectedColor = undefined;
 
+    saveBoardContent();
     render();
 }
 
@@ -326,11 +327,11 @@ function openCategory() {
         document.getElementById("rotateTriangle").style.transform = "rotate(180deg)";
         document.getElementById("categoryDiv").innerHTML = /*html*/ `
         <p class="grey" onclick="colorChoice()">New category</p>
-        <p id="backoffice" class="turquoise" onclick="putInInput('backoffice', 'color1')">Backoffice<span class="selectColor turquoise_point"></span></p>
-        <p id="design" class="orange" onclick="putInInput('design', 'color2')">Design<span class="selectColor orange_point"></span></p>
-        <p id="marketing" class="blue" onclick="putInInput('marketing', 'color3')">Marketing<span class="selectColor blue_point"></span></p>
-        <p id="media" class="yellow" onclick="putInInput('media', 'color4')">Media<span class="selectColor yellow_point"></span></p>
-        <p id="sales" class="pink" onclick="putInInput('sales', 'color5')">Sales<span class="selectColor pink_point"></span></p>
+        <p id="backoffice" class="turquoise" onclick="putInInput('backoffice', 'color3')">Backoffice<span class="selectColor turquoise_point"></span></p>
+        <p id="design" class="orange" onclick="putInInput('design', 'color1')">Design<span class="selectColor orange_point"></span></p>
+        <p id="marketing" class="blue" onclick="putInInput('marketing', 'color4')">Marketing<span class="selectColor blue_point"></span></p>
+        <p id="media" class="yellow" onclick="putInInput('media', 'color5')">Media<span class="selectColor yellow_point"></span></p>
+        <p id="sales" class="pink" onclick="putInInput('sales', 'color2')">Sales<span class="selectColor pink_point"></span></p>
         `;
         } else if (!document.getElementById("categoryDiv").innerHTML == "") {
             document.getElementById("categoryDiv").innerHTML = "";
@@ -352,11 +353,11 @@ function colorChoice() {
     </div>
     `;
     document.getElementById("colorChoice").innerHTML = /*html*/ `
-    <span id="color1" onmouseover="colorFocus('color1')" onmouseout="colorUnfocus('color1')" class="green newCategory"></span>
-    <span id="color2" onmouseover="colorFocus('color2')" onmouseout="colorUnfocus('color2')" class="red newCategory"></span>
-    <span id="color3" onmouseover="colorFocus('color3')" onmouseout="colorUnfocus('color3')" class="violet newCategory"></span>
-    <span id="color4" onmouseover="colorFocus('color4')" onmouseout="colorUnfocus('color4')" class="brightBlue newCategory"></span>
-    <span id="color5" onmouseover="colorFocus('color5')" onmouseout="colorUnfocus('color5')" class="darkYellow newCategory"></span>
+    <span id="color1" onmouseover="colorFocus('color3')" onmouseout="colorUnfocus('color1')" class="green newCategory"></span>
+    <span id="color2" onmouseover="colorFocus('color1')" onmouseout="colorUnfocus('color2')" class="red newCategory"></span>
+    <span id="color3" onmouseover="colorFocus('color4')" onmouseout="colorUnfocus('color3')" class="violet newCategory"></span>
+    <span id="color4" onmouseover="colorFocus('color5')" onmouseout="colorUnfocus('color4')" class="brightBlue newCategory"></span>
+    <span id="color5" onmouseover="colorFocus('color2')" onmouseout="colorUnfocus('color5')" class="darkYellow newCategory"></span>
     `;
 
     document.getElementById("createCategory").style.display = "flex";
@@ -468,7 +469,6 @@ function randColor(){
 
 function openAssignedTo() {
     if (document.getElementById("assignedToDiv").innerHTML == "") {
-        document.getElementById("taskInfo").classList.add("showScroll");
         document.getElementById("rotateTriangle2").style.transform = "rotate(180deg)";
         document.getElementById("assignedToDiv").innerHTML = /*html*/ `
         <div>

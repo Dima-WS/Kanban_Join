@@ -125,6 +125,10 @@ h1 {
     background-color: #0038FF;
 }
 
+.color5 {
+    background-color: #ffc701;
+}
+
 .title {
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -897,4 +901,310 @@ h2 {
 
 .heading > div > input {
     margin-right: 2rem;
+}
+
+.navTop > img {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .navSection a {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navSection a img {
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+    }
+
+    .mainContent {
+        margin-left: 1rem;
+    }
+
+    .navSection {
+        flex-direction: column;
+        background-color: #2A3647;
+    }
+}
+
+@media (max-width: 800px) {
+    .navSide {
+        height: auto;
+        width: 100%;
+    }
+
+    .navSection {
+        flex-direction: row;
+        background-color: #2A3647;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .navSection a {
+        width: 33.33%;
+        padding: 1rem 0;
+    }
+
+    .navFooter {
+        display: none;
+    }
+
+    .contentContainer {
+        margin-left: 0;
+    }
+
+    .navSide .joinIcon {
+        display: none;
+    }
+
+    .navTop {
+        width: 100%;
+    }
+
+    .mainContent {
+        margin-left: 0;
+    }
+
+    #content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navTop > img {
+        display: flex;
+        margin-left: 2rem;
+        height: 3.2rem;
+    }
+
+    .navTop .questionMark {
+        visibility: hidden;
+    }
+
+    .navTop h6 {
+        visibility: hidden;
+    }
+
+    .heading-responsive {
+        display: flex;
+        font-size: 1rem;
+    }
+
+    .title h1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #mainContent {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    .column {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .firstRow a .boxes_1 {
+        max-width: 7rem;
+        max-height: 7rem;
+    }
+
+    .quantity {
+        font-size: 2.5rem;
+    }
+
+    .firstRow {
+        width: 26rem;
+    }
+
+    .secondRow {
+        width: auto;
+        height: 7rem;
+        width: 26rem;
+        margin-top: 2.5rem;
+    }
+
+    .firstBox, .secondBox {
+        height: 7rem;
+        width: 12rem;
+    }
+
+    .thirdRow {
+        width: 26rem;
+        margin-top: 2.5rem;
+    }
+
+    .mainContent .boxInfo {
+        font-size: 0.9rem;
+    }
+
+    .greyVerticalLine {
+        height: 4.8rem;
+    }
+
+    .urgentIcon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .leftPart {
+        width: 7rem;
+    }
+
+    .thirdRow_subBox img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .secondBox img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .hiddenVerticalLine {
+        display: none;
+    }
+
+    .showedHorizontalLine {
+        margin-top: 2rem;
+        display: flex;
+    }
+
+    .title .heading_second {
+        padding-left: 0;
+    }
+    
+    .title h1 {
+        margin-left: 6rem;
+    }
+
+    .title .heading_first {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .firstRow a .boxes_1 {
+        max-width: 6.5rem;
+        max-height: 6.5rem;
+        border-radius: 20px;
+    }
+
+    .firstRow {
+        margin: 0 auto;
+        width: 23rem;
+    }
+
+    .quantity {
+        font-size: 2.3rem;
+    }
+
+    .secondRow {
+        width: 23rem;
+        margin: 2rem auto;
+        max-height: 6.5rem;
+        border-radius: 20px;
+    }
+
+    .thirdRow {
+        margin: 0;
+        width: 23rem;
+    }
+
+    .firstBox, .secondBox {
+        max-height: 6.5rem;
+        width: 10.5rem;
+        border-radius: 20px;
+    }
+
+    .urgentIcon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .firstBox img, .secondBox img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .title h1 {
+        margin-left: 9rem;
+    }
+
+    .navTop > div {
+        right: 1rem;
+    }
+
+    .showedHorizontalLine {
+        display: flex;
+    }
+
+    .navTop > div {
+        right: 5rem;
+    }
+
+    .column h2 {
+        margin-bottom: 1rem;
+    }
+
+    #ToDo, #InProgress, #AwaitingFeedback, #Done {
+        min-height: 1rem;
+    }
+
+    .column .taskDiv {
+        margin-bottom: 2.5rem;
+    }
+
+    .title {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .title h1 {
+        margin-left: 11rem;
+    }
+
+    .firstRow {
+        width: 21.5rem;
+    }
+
+    .secondRow {
+        width: 21.5rem;
+    }
+
+    .thirdRow {
+        width: 21.5rem;
+    }
+
+    .secondRow {
+        margin: 1rem auto;
+    }
+
+    .firstBox, .secondBox {
+        width: 10rem;
+    }
+
+    .leftPart {
+        justify-content: space-around;
+    }
+
+    .thirdRow_subBox {
+        width: 6.5rem;
+    }
+
+    .heading {
+        display: block;
+    }
 }
