@@ -162,6 +162,10 @@ input::placeholder {
     background-repeat: no-repeat;
 }
 
+.buttonsDiv {
+    margin-top: 1.5rem;
+}
+
 .buttonsDiv a {
     text-decoration: none;
     color: #2A3647;
@@ -173,6 +177,59 @@ input::placeholder {
     flex-direction: column;
     align-items: center;
     max-height: 14rem;
+}
+
+.coverDiv {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F6F7F8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: hideDiv;
+    animation-delay: 2s;
+    animation-duration: 2s;
+}
+
+.coverDiv2 {
+    animation-name: flexNone;
+    animation-delay: 4s;
+    display: none;
+}
+
+.coverDiv > img {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    animation-name: joinIcon;
+    animation-duration: 2s;
+}
+
+@keyframes joinIcon {
+    0% {
+        top: 45%;
+        left: 45%;
+    }
+    20% {
+        top: 45%;
+        left: 45%;
+    }
+    100% {
+        left: 4rem;
+        top: 4rem;
+    }
+}
+
+@keyframes hideDiv {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 970px) {
@@ -200,6 +257,33 @@ input::placeholder {
 
     .signUp_div p {
         margin-bottom: 0.6rem;
+    }
+
+    .coverDiv > img {
+        height: 5rem;
+    }
+
+    @keyframes joinIcon {
+        0% {
+            top: 45%;
+            left: 45%;
+        }
+        20% {
+            top: 45%;
+            left: 45%;
+        }
+        100% {
+            left: 2.5rem;
+            top: 2.5rem;
+        }
+    }
+
+    .coverDiv > img {
+        position: absolute;
+        top: 2.5rem;
+        left: 2.5rem;
+        animation-name: joinIcon;
+        animation-duration: 2s;
     }
 }
 

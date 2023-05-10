@@ -1,6 +1,7 @@
 "use strict"
 
 function renderLogin() {
+    loginTransition()
     document.getElementById("content").innerHTML = "";
     document.getElementById("content").innerHTML = /*html*/ `
     <img class="joinIcon" src="img/login/JoinIcon.png" alt="Join-Icon">
@@ -13,7 +14,6 @@ function renderLogin() {
         <img class="horizontalLine" src="img/login/horizontalLine.png" alt="Horizontal Line">
         <input id="email_input_logIn" class="email_input" type="text" placeholder="Email" required>
         <input id="password_input_logIn" class="password_input" type="password" placeholder="Password" required>
-        <p class="forgotPW">Forgot my password</p>
         <div class="buttonsDiv">
             <button id="login" class="login" onmouseover="upperButtonLogin()" onmouseout="lowerButtonLogin()" onclick="login()">Log in</button>
             <button id="guest_login" class="guest_login" onmouseover="upperButtonGuest()" onmouseout="lowerButtonGuest()" onclick="setNameToStorage('Guest')"><a id="guest_login_link" href="summary.html">Guest Log in</a></button>
@@ -119,7 +119,7 @@ function saveData() {
     }
 }
   
-  function login() {
+function login() {
     let email = document.getElementById("email_input_logIn").value;
     let password = document.getElementById("password_input_logIn").value;
   
@@ -129,9 +129,23 @@ function saveData() {
     if (email === savedEmail && password === savedPassword && email !== "" && password !== "") {
       window.location.href = "summary.html";
     } else if (email === "" || password === "") {
-        alert("Please fill out all fields")
+        alert("Please fill out all fields");
     } else {
         alert("Invalid email or password");
     }
-  }
-  
+}
+
+function loginTransition() {
+    let div = document.createElement("div");
+    let img = document.createElement("img");
+    div.classList.add("coverDiv");
+    img.src = "img/login/JoinIcon.png";
+    div.appendChild(img)
+    document.body.appendChild(div);
+
+    setTimeout(function() {
+        let element = document.querySelector(".coverDiv");
+        div.parentNode.removeChild(element);
+      }, 4000);
+      
+}

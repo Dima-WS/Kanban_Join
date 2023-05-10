@@ -375,3 +375,152 @@ textarea::placeholder {
     padding-left: 0.7rem;
     cursor: pointer;
 }
+
+.responsiveIcon {
+    display: none;
+}
+
+.createMobile {
+    display: none;
+}
+
+h6 {
+    display: flex;
+}
+
+.responsiveMobile {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .navSection a {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navSection a img {
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+    }
+
+    .mainContent {
+        margin-left: 1rem;
+        flex-direction: column;
+        margin-right: 1rem;
+        margin-bottom: 9rem;
+    }
+
+    .navSection {
+        flex-direction: column;
+        background-color: #2A3647;
+    }
+
+    .responsiveIcon {
+        display: flex;
+        margin-left: 2rem;
+        height: 3.2rem;
+    }
+
+    h6 {
+        display: none;
+    }
+
+    .questionMark {
+        display: none;
+    }
+
+    .leftPart {
+        margin: 0;
+    }
+
+    .leftPart ~ img {
+        display: none;
+    }
+
+    .rightPart {
+        margin: 0;
+    }
+
+    #category, .assignedToDiv, #title, #description {
+        width: 100%;
+    }
+
+    #date {
+        width: 100%;
+    }
+
+    .responsiveMobile {
+        display: flex;
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    h1 {
+        margin: 1.2rem 0 1.2rem 1rem
+    }
+
+    #content {
+        margin-top: 3rem;
+        padding-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: -1;
+        width: 100vw;
+        background-color: #F6F7F8;
+    }
+
+    .createMobile ~ img {
+        display: none;
+    }
+
+    .clearCreateButtons {
+        display: none;
+    }
+
+    .createMobile {
+        display: flex;
+        color: #fff;
+        background-color: #2A3647;
+        padding: 0.8rem 0.4rem;
+        font-weight: 600;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .navSide {
+        height: auto;
+        width: 100%;
+    }
+
+    .navSection {
+        flex-direction: row;
+        background-color: #2A3647;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .navSection a {
+        width: 33.33%;
+        padding: 1rem 0;
+    }
+
+    .navFooter {
+        display: none;
+    }
+
+    .contentContainer {
+        margin-left: 0;
+    }
+
+    .navSide .joinIcon {
+        display: none;
+    }
+
+    .navTop {
+        width: 100%;
+    }
+}

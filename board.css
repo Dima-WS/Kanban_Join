@@ -907,6 +907,14 @@ h2 {
     display: none;
 }
 
+.mobileHeading {
+    display: none;
+}
+
+.mobileButton {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .navSection a {
         flex-direction: column;
@@ -968,12 +976,6 @@ h2 {
         margin-left: 0;
     }
 
-    #content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     .navTop > img {
         display: flex;
         margin-left: 2rem;
@@ -1002,10 +1004,54 @@ h2 {
         display: block;
         width: 100%;
         margin: 0;
+        margin-bottom: 7rem;
     }
 
     .column {
         margin: 0 1rem;
+        min-height: fit-content;
+    }
+
+    .mobileHeading {
+        display: flex;
+        font-size: 1rem;
+    }
+
+    .mobileButton {
+        display: flex;
+        background-color: #2A3647;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .heading {
+        flex-direction: column;
+        align-items: start;
+        margin: 0;
+        margin: -2rem 0 8% 4%;
+    }
+
+    h1 {
+        margin: 1.2rem 0 1.2rem 0;
+    }
+
+    #btn {
+        display: none;
+    }
+
+    .heading input {
+        width: 15rem;
+    }
+
+    .heading div {
+        width: 21.5rem;
+    }
+
+    #content {
+        position: absolute;
+        z-index: -1;
     }
 }
 

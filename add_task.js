@@ -60,6 +60,7 @@ function render() {
     loadBoardContent();
 
     document.getElementById("content").innerHTML =  /*html*/ `
+    <h6 class="responsiveMobile">Kanban Project Management Tool</h6>
     <h1>Add Task</h1>
     <div class="mainContent">
         <div class="leftPart">
@@ -326,7 +327,7 @@ function openCategory() {
         document.getElementById("categoryTitle").style.paddingBottom = "0.8rem";
         document.getElementById("rotateTriangle").style.transform = "rotate(180deg)";
         document.getElementById("categoryDiv").innerHTML = /*html*/ `
-        <p class="grey" onclick="colorChoice()">New category</p>
+        <!-- <p class="grey" onclick="colorChoice()">New category</p> -->
         <p id="backoffice" class="turquoise" onclick="putInInput('backoffice', 'color3')">Backoffice<span class="selectColor turquoise_point"></span></p>
         <p id="design" class="orange" onclick="putInInput('design', 'color1')">Design<span class="selectColor orange_point"></span></p>
         <p id="marketing" class="blue" onclick="putInInput('marketing', 'color4')">Marketing<span class="selectColor blue_point"></span></p>
@@ -339,29 +340,29 @@ function openCategory() {
         }
 }
 
-function colorChoice() {
-    document.getElementById("categoryTitle").style.display = "none";
-    document.getElementById("categoryTitle").style.margin = "0.8rem 0 1rem 0";
-    document.getElementById("category").style.display = "none";
-    document.getElementById("colorChoice").style.display = "flex";
-    document.getElementById("createCategory").innerHTML = /*html*/ `
-    <input id="categoryInput" class="categoryText" type="text" placeholder="New category name">
-    <div class="subtaskIcons categoryIcons">
-        <img onclick="returnCategory()" class="closeIcon" src="img/add_task/closeIcon.png" alt="Close-Icon">
-        <img class="subtaskLine" src="img/add_task/greyVerticalLine.png" alt="Vertical Line">
-        <img class="checkmarkIcon" src="img/add_task/checkmarkSymbolGrey.png" alt="Checkmark">
-    </div>
-    `;
-    document.getElementById("colorChoice").innerHTML = /*html*/ `
-    <span id="color1" onmouseover="colorFocus('color3')" onmouseout="colorUnfocus('color1')" class="green newCategory"></span>
-    <span id="color2" onmouseover="colorFocus('color1')" onmouseout="colorUnfocus('color2')" class="red newCategory"></span>
-    <span id="color3" onmouseover="colorFocus('color4')" onmouseout="colorUnfocus('color3')" class="violet newCategory"></span>
-    <span id="color4" onmouseover="colorFocus('color5')" onmouseout="colorUnfocus('color4')" class="brightBlue newCategory"></span>
-    <span id="color5" onmouseover="colorFocus('color2')" onmouseout="colorUnfocus('color5')" class="darkYellow newCategory"></span>
-    `;
+// function colorChoice() {
+//     document.getElementById("categoryTitle").style.display = "none";
+//     document.getElementById("categoryTitle").style.margin = "0.8rem 0 1rem 0";
+//     document.getElementById("category").style.display = "none";
+//     document.getElementById("colorChoice").style.display = "flex";
+//     document.getElementById("createCategory").innerHTML = /*html*/ `
+//     <input id="categoryInput" class="categoryText" type="text" placeholder="New category name">
+//     <div class="subtaskIcons categoryIcons">
+//         <img onclick="returnCategory()" class="closeIcon" src="img/add_task/closeIcon.png" alt="Close-Icon">
+//         <img class="subtaskLine" src="img/add_task/greyVerticalLine.png" alt="Vertical Line">
+//         <img class="checkmarkIcon" src="img/add_task/checkmarkSymbolGrey.png" alt="Checkmark">
+//     </div>
+//     `;
+//     document.getElementById("colorChoice").innerHTML = /*html*/ `
+//     <span id="color1" onmouseover="colorFocus('color3')" onmouseout="colorUnfocus('color1')" class="green newCategory"></span>
+//     <span id="color2" onmouseover="colorFocus('color1')" onmouseout="colorUnfocus('color2')" class="red newCategory"></span>
+//     <span id="color3" onmouseover="colorFocus('color4')" onmouseout="colorUnfocus('color3')" class="violet newCategory"></span>
+//     <span id="color4" onmouseover="colorFocus('color5')" onmouseout="colorUnfocus('color4')" class="brightBlue newCategory"></span>
+//     <span id="color5" onmouseover="colorFocus('color2')" onmouseout="colorUnfocus('color5')" class="darkYellow newCategory"></span>
+//     `;
 
-    document.getElementById("createCategory").style.display = "flex";
-}
+//     document.getElementById("createCategory").style.display = "flex";
+// }
 
 function returnCategory() {
     document.getElementById("categoryInput").value = "";
@@ -517,3 +518,4 @@ function saveBoardContent() {
 function loadBoardContent() {
     localStorage.getItem("boardContent");
 }
+
